@@ -1,10 +1,10 @@
 package com.example.lab09.beans;
 
+import com.example.lab09.entities.Book;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
 
-import com.example.lab09.entities.Student;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -14,11 +14,11 @@ import java.util.List;
 @ApplicationScoped
 public class StorageBean {
     @Getter
-    private List<Student> students;
+    private List<Book> books;
 
     @PostConstruct
     public void init(){
-        students = new ArrayList<>();
+        books = new ArrayList<>();
     }
 
 

@@ -14,56 +14,41 @@
        <h1>Hello from JSF</h1>
         <h:form>
             <h:panelGrid columns="2">
-                <p:outputLabel value="Name:" for="name"/>
-                <p:inputText value="#{studentBean.student.name}" id="name"/>
-                <p:outputLabel value="Surname:" for="surname"/>
-                <p:inputText value="#{studentBean.student.surname}" id="surname"/>
-                <p:outputLabel value="Patronymic:" for="patronymic"/>
-                <p:inputText value="#{studentBean.student.patronymic}" id="patronymic"/>
-                <p:outputLabel value="Birth date:" for="birthBate"/>
-                <p:inputText value="#{studentBean.student.birthDate}" id="birthBate"/>
-                <p:outputLabel value="Address:" for="address"/>
-                <p:inputText value="#{studentBean.student.address}" id="address"/>
-                <p:outputLabel value="Mobilephone:" for="mobilePhone"/>
-                <p:inputText value="#{studentBean.student.mobilePhone}" id="mobilePhone"/>
-                <p:outputLabel value="Faculty:" for="faculty"/>
-                <p:inputText value="#{studentBean.student.faculty}" id="faculty"/>
-                <p:outputLabel value="Course:" for="course"/>
-                <p:spinner value="#{studentBean.student.course}" id="course"/>
-                <p:outputLabel value="Group:" for="clas"/>
-                <p:inputText value="#{studentBean.student.clas}" id="clas"/>
-                <h:commandButton value="Ok" action="#{studentBean.sayHello()}"/>
-                <h:commandButton value="Add" action="#{studentBean.add()}"/>
+                <p:outputLabel value="Tittle:" for="name"/>
+                <p:inputText value="#{bookBean.book.title}" id="name"/>
+                <p:outputLabel value="Author:" for="author"/>
+                <p:inputText value="#{bookBean.book.author}" id="author"/>
+                <p:outputLabel value="Publisher:" for="publisher"/>
+                <p:inputText value="#{bookBean.book.publisher}" id="publisher"/>
+                <p:outputLabel value="Publication Year:" for="publicationYear"/>
+                <p:inputText value="#{bookBean.book.publicationYear}" id="publicationYear"/>
+                <p:outputLabel value="Number of Pages:" for="numberPages"/>
+                <p:inputText value="#{bookBean.book.numberPages}" id="numberPages"/>
+                <p:outputLabel value="Price:" for="price"/>
+                <p:inputText value="#{bookBean.book.price}" id="price"/>
+                <h:commandButton value="Ok" action="#{bookBean.sayHello()}"/>
+                <h:commandButton value="Add" action="#{bookBean.add()}"/>
             </h:panelGrid>
         </h:form>
-        <p:dataTable value="#{storageBean.students}" var="s" stripedRows="true" size="small">
-            <p:column headerText="Name">
-                <h:outputText value="#{s.name}"/>
+        <p:dataTable value="#{storageBean.books}" var="s" stripedRows="true" size="small">
+            <p:column headerText="Tittle">
+                <h:outputText value="#{s.title}"/>
             </p:column>
-            <p:column headerText="Surname">
-                <h:outputText value="#{s.surname}"/>
+            <p:column headerText="Author">
+                <h:outputText value="#{s.author}"/>
             </p:column>
-            <p:column headerText="Patronymic">
-                <h:outputText value="#{s.patronymic}"/>
+            <p:column headerText="Publisher">
+                <h:outputText value="#{s.publisher}"/>
             </p:column>
-            <p:column headerText="Birth date">
-                <h:outputText value="#{s.birthDate}"/>
+            <p:column headerText="Publication Year">
+                <h:outputText value="#{s.publicationYear}"/>
             </p:column>
-            <p:column headerText="Address">
-                <h:outputText value="#{s.address}"/>
+            <p:column headerText="Number of Pages">
+                <h:outputText value="#{s.numberPages}"/>
             </p:column>
-            <p:column headerText="Mobilephone">
-                <h:outputText value="#{s.mobilePhone}"/>
+            <p:column headerText="Price">
+                <h:outputText value="#{s.price}"/>
             </p:column >
-            <p:column headerText="Faculty">
-                <h:outputText value="#{s.faculty}"/>
-            </p:column>
-            <p:column headerText="Course">
-                <h:outputText value="#{s.course}"/>
-            </p:column>
-            <p:column headerText="Group">
-                <h:outputText value="#{s.clas}"/>
-            </p:column>
         </p:dataTable>
     </h:body>
 

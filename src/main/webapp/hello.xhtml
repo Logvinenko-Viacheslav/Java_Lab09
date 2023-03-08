@@ -8,23 +8,17 @@
 <f:view>
    <h:panelGrid columns="2">
         <h:outputLabel value="Name:" for="name"/>
-        <h:outputText value="#{studentBean.student.name}" id="name"/>
+        <h:outputText value="#{bookBean.book.title}" id="name"/>
         <h:outputLabel value="Surname:" for="surname"/>
-        <h:outputText value="#{studentBean.student.surname}" id="surname"/>
+        <h:outputText value="#{bookBean.book.author}" id="surname"/>
         <h:outputLabel value="Patronymic:" for="patronymic"/>
-        <h:outputText value="#{studentBean.student.patronymic}" id="patronymic"/>
+        <h:outputText value="#{bookBean.book.publisher}" id="patronymic"/>
         <h:outputLabel value="Birth date:" for="birthBate"/>
-        <h:outputText value="#{studentBean.student.birthDate}" id="birthBate"/>
+        <h:outputText value="#{bookBean.book.publicationYear}" id="birthBate"/>
         <h:outputLabel value="Address:" for="address"/>
-        <h:outputText value="#{studentBean.student.address}" id="address"/>
+        <h:outputText value="#{bookBean.book.numberPages}" id="address"/>
         <h:outputLabel value="Mobilephone:" for="mobilePhone"/>
-        <h:outputText value="#{studentBean.student.mobilePhone}" id="mobilePhone"/>
-        <h:outputLabel value="Faculty:" for="faculty"/>
-        <h:outputText value="#{studentBean.student.faculty}" id="faculty"/>
-        <h:outputLabel value="Course:" for="course"/>
-        <h:outputText value="#{studentBean.student.course}" id="course"/>
-        <h:outputLabel value="Group:" for="clas"/>
-        <h:outputText value="#{studentBean.student.clas}" id="clas"/>
+        <h:outputText value="#{bookBean.book.price}" id="mobilePhone"/>
     </h:panelGrid>
     <h:commandButton value="Ok" action="index"/>
 </f:view>
