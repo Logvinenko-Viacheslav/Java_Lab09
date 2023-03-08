@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+   <h:panelGrid columns="2">
+        <h:outputLabel value="Name:" for="name"/>
+        <h:outputText value="#{studentBean.student.name}" id="name"/>
+        <h:outputLabel value="Surname:" for="surname"/>
+        <h:outputText value="#{studentBean.student.surname}" id="surname"/>
+        <h:outputLabel value="Patronymic:" for="patronymic"/>
+        <h:outputText value="#{studentBean.student.patronymic}" id="patronymic"/>
+        <h:outputLabel value="Birth date:" for="birthBate"/>
+        <h:outputText value="#{studentBean.student.birthDate}" id="birthBate"/>
+        <h:outputLabel value="Address:" for="address"/>
+        <h:outputText value="#{studentBean.student.address}" id="address"/>
+        <h:outputLabel value="Mobilephone:" for="mobilePhone"/>
+        <h:outputText value="#{studentBean.student.mobilePhone}" id="mobilePhone"/>
+        <h:outputLabel value="Faculty:" for="faculty"/>
+        <h:outputText value="#{studentBean.student.faculty}" id="faculty"/>
+        <h:outputLabel value="Course:" for="course"/>
+        <h:outputText value="#{studentBean.student.course}" id="course"/>
+        <h:outputLabel value="Group:" for="clas"/>
+        <h:outputText value="#{studentBean.student.clas}" id="clas"/>
+    </h:panelGrid>
+    <h:commandButton value="Ok" action="index"/>
+</f:view>
+</html>
