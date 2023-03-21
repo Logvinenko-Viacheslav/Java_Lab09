@@ -8,29 +8,27 @@
       xmlns:p="http://primefaces.org/ui">
 <f:view>
     <h:head>
-       <title>Hello page</title>
+       <title>Site</title>
     </h:head>
     <h:body>
-       <h1>Hello from JSF</h1>
+       <h1>Data Base JSF</h1>
         <h:form>
-            <h:panelGrid columns="2">
-                <p:outputLabel value="Tittle:" for="name"/>
-                <p:inputText value="#{bookBean.book.title}" id="name"/>
-                <p:outputLabel value="Author:" for="author"/>
-                <p:inputText value="#{bookBean.book.author}" id="author"/>
-                <p:outputLabel value="Publisher:" for="publisher"/>
-                <p:inputText value="#{bookBean.book.publisher}" id="publisher"/>
-                <p:outputLabel value="Publication Year:" for="publicationYear"/>
-                <p:inputText value="#{bookBean.book.publicationYear}" id="publicationYear"/>
-                <p:outputLabel value="Number of Pages:" for="numberPages"/>
-                <p:inputText value="#{bookBean.book.numberPages}" id="numberPages"/>
-                <p:outputLabel value="Price:" for="price"/>
-                <p:inputText value="#{bookBean.book.price}" id="price"/>
-                <h:commandButton value="Ok" action="#{bookBean.sayHello()}"/>
-                <h:commandButton value="Add" action="#{bookBean.add()}"/>
-            </h:panelGrid>
-        </h:form>
+            <p:selectOneRadio id="choose" layout="grid" columns="1" value="#{storageBean.userChoice}">
+                <f:selectItem itemLabel="All books" itemValue="1"/>
+                <f:selectItem itemLabel="Books by author (ascending order of publish year )" itemValue="2"/>
+                <f:selectItem itemLabel="Books by publisher" itemValue="3"/>
+                <f:selectItem itemLabel="Books publish after year" itemValue="4"/>
+                <f:selectItem itemLabel="Authors by alphabet" itemValue="5"/>
+                <f:selectItem itemLabel="No duplicate publishers" itemValue="6"/>
+                <f:selectItem itemLabel="Books for each publishers" itemValue="7"/>
+            </p:selectOneRadio>
+            <p:inputText value="#{storageBean.userInput}"/>
+            <h:commandButton value="Process" action="#{bookBean.process()}"/>
+    </h:form>
         <p:dataTable value="#{storageBean.books}" var="s" stripedRows="true" size="small">
+            <p:column headerText="Id">
+                <h:outputText value="#{s.id}"/>
+            </p:column>
             <p:column headerText="Tittle">
                 <h:outputText value="#{s.title}"/>
             </p:column>
@@ -44,12 +42,13 @@
                 <h:outputText value="#{s.publicationYear}"/>
             </p:column>
             <p:column headerText="Number of Pages">
-                <h:outputText value="#{s.numberPages}"/>
+                <h:outputText value="#{s.numberOfPages}"/>
             </p:column>
             <p:column headerText="Price">
                 <h:outputText value="#{s.price}"/>
             </p:column >
         </p:dataTable>
+
     </h:body>
 
 </f:view>
